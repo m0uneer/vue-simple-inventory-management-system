@@ -1,0 +1,10 @@
+{
+  "src/**/*.ts": [
+    "vue-cli-service lint --fix",
+    "git add"
+  ],
+  "src/**/*.vue": [
+    "vue-cli-service lint --fix",
+    "git add"
+  ]
+}

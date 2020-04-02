@@ -6,9 +6,11 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     '@vue/airbnb',
-    '@vue/typescript/recommended',
+    '@vue/typescript',
   ],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
     ecmaVersion: 2020,
   },
   rules: {

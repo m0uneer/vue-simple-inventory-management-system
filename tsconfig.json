@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2016",
+    "module": "commonjs",
+    "declaration": true,
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -13,7 +20,9 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "reflect-metadata",
+      "node"
     ],
     "paths": {
       "@/*": [
@@ -35,6 +44,7 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
