@@ -24,3 +24,10 @@ npm run test:unit
 ```
 npm run lint
 ```
+
+## Project Todos
+- [x] Vue
+- [x] Typescript
+- [ ] Unit testing
+- [ ] IMS storage should apply First In First Out (FIFO) principle 
+- [ ] Deploy your app using Firebase Hosting
