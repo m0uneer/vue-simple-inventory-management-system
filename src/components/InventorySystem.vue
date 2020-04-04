@@ -3,7 +3,12 @@
     <div class="row justify-content-center">
       <div class="row col-lg-8 justify-content-center">
         <div class="col-lg-12 col-xl-12 error-wrapper">
-          <div v-if="hasError" class="alert alert-danger"> Please Purchase a valid item </div>
+          <div v-if="hasInvalidItemError" class="alert alert-danger">
+            Please Purchase a valid item.
+          </div>
+          <div v-if="hasInvalidQuantityError" class="alert alert-danger">
+            No enough quantity! Max purchase quantity for this item is {{ maxQty }}
+          </div>
         </div>
 
         <div class="row col-lg-10 col-xl-10 text-center justify-content-center">
@@ -99,39 +104,56 @@ export default class InventorySystem extends Vue {
   // Clone data to be able to reset
   inventory: Item[] = this.$store.getters.inventory;
 
-  hasError = false;
+  hasInvalidItemError = false;
+
+  hasInvalidQuantityError = false;
+
+  maxQty = 0;
 
   submit() {
+    this.resetErrors();
+
+    const quantity = Number(this.quantity);
     const item = {
       name: this.name,
       value: Number(this.value),
-      quantity: Number(this.quantity),
+      quantity,
     };
 
     if (this.action !== this.mutationTypes.PURCHASE_ITEM) {
       this.$store.commit(this.action, item);
-      this.hasError = false;
 
       return false;
     }
 
-    const isExist = this.inventory
-      .some(({ name, value }: Item) => item.name === name && item.value === value);
+    const imsItem = this.inventory
+      .find(({ name, value }: Item) => item.name === name && item.value === value);
 
-    if (isExist) {
+    if (imsItem && quantity > imsItem.quantity) {
+      this.hasInvalidQuantityError = true;
+      this.maxQty = imsItem.quantity;
+
+      return false;
+    }
+
+    if (imsItem) {
       this.$store.commit(this.action, item);
-      this.hasError = false;
 
       return false;
     }
 
-    this.hasError = true;
+    this.hasInvalidItemError = true;
 
     return false;
   }
 
   resetInventory() {
     this.$store.commit(this.mutationTypes.RESET_INVENTORY);
+  }
+
+  resetErrors() {
+    this.hasInvalidItemError = false;
+    this.hasInvalidQuantityError = false;
   }
 }
 
