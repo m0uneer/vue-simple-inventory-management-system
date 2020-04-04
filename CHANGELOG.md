@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/m0uneer/simple-inventory-management-system/compare/v1.0.0...v1.0.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* **inventorysystem:** set min values for value and quantity fields ([f403a9d](https://github.com/m0uneer/simple-inventory-management-system/commit/f403a9d141f458fb7a68559082c631ac7d285ba7))
+
 # 1.0.0 (2020-04-04)
 
 
