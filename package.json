@@ -2,7 +2,7 @@
   "name": "simple-inventory-management-system",
   "description": "Inventory Management System (IMS) to keep track of items procured from suppliers, sold to customers or returned by customers.",
   "author": "Mahmoud Mouneer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

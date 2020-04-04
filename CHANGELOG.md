@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/m0uneer/simple-inventory-management-system/compare/v1.0.1...v1.0.2) (2020-04-04)
+
+
+### Bug Fixes
+
+* **inventorysystem:** purchasing quantity > the available at the stock ([dd742fd](https://github.com/m0uneer/simple-inventory-management-system/commit/dd742fdd3b810b472627a3bf158d5b26f43362bc)), closes [#4](https://github.com/m0uneer/simple-inventory-management-system/issues/4)
+
 ## [1.0.1](https://github.com/m0uneer/simple-inventory-management-system/compare/v1.0.0...v1.0.1) (2020-04-04)
 
 
