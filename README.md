@@ -1,6 +1,29 @@
-# simple-inventory-management-system
+# Simple Inventory Management System
+Tech Store would like to have an Inventory Management System (IMS) to keep track of items procured from suppliers,
+sold to customers or returned by customers. Each item has a Value and Quantity, for example Item A has a Value of 1
+and Quantity of 3. IMS needs to be updated each time the store procures goods, for example a new Item A is bought
+by the store from a supplier. IMS will also need to be updated when a customer buys items (i.e. the item will need
+to be removed from the inventory). In addition, it could also happen that a customer buys an item then returns it.
+In this case, the item will need to be removed from the inventory when the customer buys it and then added
+to the inventory when the customer returns it.
 
-## Project setup
+## Assumptions and key points
+- The uniqueness of an item is decided by the its name and value
+- The scenario of returning an item has the same business rules (And test cases) of adding one
+- Purchasing (Removal) an item should must pass the name and the value to be able to update that item properly.
+
+## Technical Features
+- Using typescript
+- Unit test using Jest
+- Using SCSS
+- Using Bootstrap 4
+- Applying AirBnB Style guide 
+- Using `semantic-release` for semantic versioning and generation changelog
+- Using `commitlint` and `husky` to force Angular conventional commit format and linting staged files
+- Deployed to Firebase
+
+## Development
+### Project setup
 ```
 npm install
 ```
@@ -32,9 +55,6 @@ npm run lint
 - [x] Unit testing
 - [ ] Using Inversify to manage DI
 - [ ] Form Validation
+- [ ] Using a logger
+- [ ] Using Djaty for bug tracking
 - [ ] Deploy your app using Firebase Hosting
-
-## Assumptions and key points
-- The uniqueness of an item is decided by the its name and value
-- The scenario of returning an item has the same business rules (And test cases) of adding one
-- Purchasing (Removal) an item should must pass the name and the value to be able to update that item properly.
