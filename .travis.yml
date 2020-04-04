@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '12'
+jobs:
+  include:
+    - stage: test
+      script: npm run test:unit
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+        - npx semantic-release
+    - stage: deploy
+      script: npm run build
+      deploy:
+        provider: firebase
+        skip_cleanup: true
+        token:
+          secure: "FVVokcY04NudGANSxkQ2loNjOISIxPWdb8RCtEXxRF2h6xQEdILajYaf9T0iou7kegWBCJIvKNhA6CyHw08xL3fGLOlt0lhOuHAxvnFD+Tji+JrZEvA1lk/PVRdM5TGaw/e1+yF7VIsY47bMy8jm/L6r2ny4+xvshPowqbz03/bjf0PbmxTPN3bW1sBDGvEYmbWby6x7oiFQsxEyLYp+6y4SVoRGBBFqsVUqkfVOzeLpjb/l0Ec5WyvMMWm63cMycUBNQ7yQ3s+3muPbnc0HikiZaiiltx6xu/01NKz1/jYq9A5jcqyKN1/ehdGRK2/2+5k4BpKQp6gHHcSaHXUGR4Th1yFbxyuY7ViUowTqvEgK2kkwvDeygA7etgWalDwhzQh3YEc9AQlcUhbSkT+qbooIJokR6TdWBQKFzhIdPiWEm2TU7/Be5hMox2ISRrHjtaQC5ijJcA5FhZlngE6NTxfIXMKSBotOw81P9Bwpu5GXUrUHmcDKeFXNH1uiqJDuQfEKPbRhlRicG4XyE/KjU2Ms3ISBNGlxkeVAa7fxxAKsa4Dz2fw5dJYTPMKSu+cTrXxUBtvyAjy2M3qQdN1ZUsJKuvMbiKm4hRefFfnSgMrdsUPFIDYgdgqXwwxz2b+tCWxP1eP1kSnnXDtSjQ4AwY3j8YVc6gjzNblxe3dQ/Zk="

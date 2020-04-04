@@ -14,15 +14,21 @@ to the inventory when the customer returns it.
 
 ## Technical Features
 - Using typescript
+- Using Vue
+- Using Vuex
 - Unit test using Jest
 - Using SCSS
 - Using Bootstrap 4
 - Applying AirBnB Style guide 
 - Using `semantic-release` for semantic versioning and generation changelog
 - Using `commitlint` and `husky` to force Angular conventional commit format and linting staged files
+- Using Travis for CI/CD and releasing
 - Deployed to Firebase
 
 ## Development
+### Requirements
+- NodeJS > v10.18
+
 ### Project setup
 ```
 npm install
@@ -53,8 +59,9 @@ npm run lint
 - [x] Typescript
 - [x] IMS storage should apply First In First Out (FIFO) principle 
 - [x] Unit testing
+- [x] Deploy your app using Firebase Hosting
 - [ ] Using Inversify to manage DI
-- [ ] Form Validation
+- [ ] Advanced form validation
 - [ ] Using a logger
 - [ ] Using Djaty for bug tracking
-- [ ] Deploy your app using Firebase Hosting
+- [ ] Add the badges to the README.md
