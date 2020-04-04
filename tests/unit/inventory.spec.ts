@@ -5,7 +5,9 @@ import { Item } from '@/models/item';
 
 let state: { inventory: Item[] };
 beforeEach(() => {
-  state = JSON.parse(JSON.stringify(demoData));
+  state = {
+    inventory: JSON.parse(JSON.stringify(demoData)),
+  };
 });
 
 describe('Adding items to the inventory / Returning items to the inventory', () => {
@@ -106,7 +108,6 @@ describe('Removing items from the inventory (Customer Purchases)', () => {
             Return Item A with Value 2 and Quantity 2
             Return Item A with Value 1 and Quantity 2
             Return Item B with Value 2 and Quantity 2`, () => {
-
     inventoryMutations[InventoryMutationsTypes.ADD_ITEM](state, { name: 'Item F', value: 2, quantity: 2 });
     inventoryMutations[InventoryMutationsTypes.ADD_ITEM](state, { name: 'Item A', value: 2, quantity: 3 });
     inventoryMutations[InventoryMutationsTypes.ADD_ITEM](state, { name: 'Item A', value: 1, quantity: 2 });

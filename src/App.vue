@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2>Simple Inventory Management System</h2>
     <div id="nav">
       <img class="logo" alt="Vue logo" src="./assets/logo.png">
       <router-link to="/">Home</router-link> |
@@ -10,6 +11,9 @@
 </template>
 
 <style lang="scss">
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
