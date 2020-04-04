@@ -36,7 +36,7 @@
               </label>
               <div class="col-9 col-lg-9 col-xl-9">
                 <!--suppress HtmlFormInputWithoutLabel -->
-                <input v-model="value" type="number" class="border rounded col-xl-12" >
+                <input v-model="value" type="number" min="1" class="border rounded col-xl-12" >
               </div>
             </div>
 
@@ -46,7 +46,7 @@
               </label>
               <div class="col-9 col-lg-9 col-xl-9">
                 <!--suppress HtmlFormInputWithoutLabel -->
-                <input v-model="quantity" type="number" class="border rounded col-xl-12" >
+                <input v-model="quantity" type="number" min="1" class="border rounded col-xl-12" >
               </div>
             </div>
 
@@ -86,11 +86,11 @@ import { Item } from '@/models/item';
 
 @Component
 export default class InventorySystem extends Vue {
-  name = 'Item ';
+  name = 'Item X';
 
-  value = 0;
+  value = 1;
 
-  quantity = 0;
+  quantity = 1;
 
   action = InventoryMutationsTypes.ADD_ITEM;
 
