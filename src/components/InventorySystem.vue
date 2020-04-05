@@ -58,7 +58,7 @@
             <div class="row col-xl-12 justify-content-center">
               <div class="col-9 col-lg-9 col-xl-9"></div>
               <div class="row col-3 col-lg-3 col-xl-3 justify-content-end">
-                <input @click="submit" type="submit" class="btn btn-success">
+                <input @click="submitForm" type="button" class="btn btn-success" value="Submit">
               </div>
             </div>
           </form>
@@ -110,8 +110,8 @@ export default class InventorySystem extends Vue {
 
   maxQty = 0;
 
-  submit() {
-    this.resetErrors();
+  submitForm() {
+    this.resetFormErrors();
 
     const quantity = Number(this.quantity);
     const item = {
@@ -123,7 +123,7 @@ export default class InventorySystem extends Vue {
     if (this.action !== this.mutationTypes.PURCHASE_ITEM) {
       this.$store.commit(this.action, item);
 
-      return false;
+      return;
     }
 
     const imsItem = this.inventory
@@ -133,25 +133,23 @@ export default class InventorySystem extends Vue {
       this.hasInvalidQuantityError = true;
       this.maxQty = imsItem.quantity;
 
-      return false;
+      return;
     }
 
     if (imsItem) {
       this.$store.commit(this.action, item);
 
-      return false;
+      return;
     }
 
     this.hasInvalidItemError = true;
-
-    return false;
   }
 
   resetInventory() {
     this.$store.commit(this.mutationTypes.RESET_INVENTORY);
   }
 
-  resetErrors() {
+  resetFormErrors() {
     this.hasInvalidItemError = false;
     this.hasInvalidQuantityError = false;
   }
