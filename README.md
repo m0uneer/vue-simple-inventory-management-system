@@ -7,6 +7,9 @@ to be removed from the inventory). In addition, it could also happen that a cust
 In this case, the item will need to be removed from the inventory when the customer buys it and then added
 to the inventory when the customer returns it.
 
+## Live
+https://simple-inventory-system.web.app/#/
+
 ## Assumptions and key points
 - The uniqueness of an item is decided by the its name and value
 - The scenario of returning an item has the same business rules (And test cases) of adding one
