@@ -64,7 +64,7 @@
     "node-sass": "^4.12.0",
     "reflect-metadata": "^0.1.13",
     "sass-loader": "^8.0.2",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "^19.0.3",
     "ts-jest": "^23.10.4",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "~3.7.5",
